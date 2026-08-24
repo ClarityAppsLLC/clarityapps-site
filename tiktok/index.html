@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divinity — The Bible App</title>
+  <meta name="description" content="A daily verse, guided reading plans, and a place to pray together. Divinity by Clarity Apps LLC." />
+  <meta name="robots" content="noindex" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+      background: #F4E4C1;
+      background-image: linear-gradient(170deg, #FBF3E2 0%, #F4E4C1 55%, #EBD3A3 100%);
+      color: #3B2A16;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 24px 32px;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* main takes the slack and centres inside it; the footer stays in normal
+       flow beneath. An absolutely-positioned footer overlapped the store buttons
+       on a landscape phone (844x390), where the content is taller than one
+       viewport — measured, not guessed. */
+    main {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .mark { width: 76px; height: 76px; margin-bottom: 28px; }
+    h1 {
+      font-size: clamp(34px, 7vw, 52px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.5px;
+      margin-bottom: 18px;
+      max-width: 12ch;
+    }
+    p.lede {
+      font-size: clamp(17px, 2.4vw, 20px);
+      line-height: 1.6;
+      color: #6B5334;
+      max-width: 30ch;
+      margin-bottom: 40px;
+    }
+    .stores { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+    .store {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      /* They stack on a phone, where two different widths read as a mistake. */
+      min-width: 196px;
+      gap: 11px;
+      background: #241A0E;
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 11px;
+      transition: transform 0.12s ease, opacity 0.12s ease;
+    }
+    .store:hover { opacity: 0.88; transform: translateY(-1px); }
+    .store svg { flex: 0 0 auto; }
+    .store .lines { text-align: left; line-height: 1.15; }
+    .store .top {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      opacity: 0.75;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .store .bottom {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    footer {
+      flex: 0 0 auto;
+      padding-top: 56px;
+      font-size: 13px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    footer, footer a { color: #8A7350; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: #5E4A2B; }
+    @media (prefers-reduced-motion: reduce) { .store { transition: none; } }
+  </style>
+</head>
+<body>
+  <main>
+  <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="Divinity">
+    <g stroke="#B5762F" stroke-width="3" stroke-linecap="round">
+      <line x1="59.9" y1="18.0" x2="63.0" y2="10.6" />
+      <line x1="68.4" y1="23.6" x2="74.0" y2="18.0" />
+      <line x1="74.0" y1="32.1" x2="81.4" y2="29.0" />
+      <line x1="74.0" y1="51.9" x2="81.4" y2="55.0" />
+      <line x1="68.4" y1="60.4" x2="74.0" y2="66.0" />
+      <line x1="59.9" y1="66.0" x2="63.0" y2="73.4" />
+      <line x1="40.1" y1="66.0" x2="37.0" y2="73.4" />
+      <line x1="31.6" y1="60.4" x2="26.0" y2="66.0" />
+      <line x1="26.0" y1="51.9" x2="18.6" y2="55.0" />
+      <line x1="26.0" y1="32.1" x2="18.6" y2="29.0" />
+      <line x1="31.6" y1="23.6" x2="26.0" y2="18.0" />
+      <line x1="40.1" y1="18.0" x2="37.0" y2="10.6" />
+    </g>
+    <rect x="45.5" y="20" width="9" height="60" rx="2" fill="#3B2A16" />
+    <rect x="30" y="38" width="40" height="9" rx="2" fill="#3B2A16" />
+  </svg>
+
+  <h1>Scripture, every morning.</h1>
+  <p class="lede">A verse chosen for the day, guided reading plans, and a place to pray together.</p>
+
+  <div class="stores">
+    <a class="store" href="https://apps.apple.com/us/app/divinity-the-bible-app/id6777536853?ct=tiktok-main">
+      <svg width="22" height="26" viewBox="0 0 22 26" fill="#fff" aria-hidden="true">
+        <path d="M18.1 13.8c0-3 2.4-4.4 2.5-4.5-1.4-2-3.5-2.3-4.3-2.3-1.8-.2-3.5 1.1-4.4 1.1-.9 0-2.3-1.1-3.8-1-1.9 0-3.7 1.1-4.7 2.9-2 3.5-.5 8.6 1.4 11.4 1 1.4 2.1 2.9 3.6 2.9 1.5-.1 2-.9 3.8-.9s2.3.9 3.8.9c1.6 0 2.6-1.4 3.5-2.8 1.1-1.6 1.6-3.2 1.6-3.3-.1 0-3-1.2-3-4.4zM15.2 5.1c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.5 1.8-.8.9-1.4 2.3-1.3 3.7 1.3.1 2.7-.7 3.6-1.7z"/>
+      </svg>
+      <span class="lines"><span class="top">Download on the</span><span class="bottom">App Store</span></span>
+    </a>
+
+    <a class="store" href="https://play.google.com/store/apps/details?id=com.clarityapps.divinity&referrer=utm_source%3Dtiktok-main">
+      <svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true">
+        <path d="M1.3.9C1.1 1.2 1 1.6 1 2.1v19.8c0 .5.1.9.3 1.2l.1.1 11.1-11.1v-.2L1.4.8l-.1.1z" fill="#00D2FF"/>
+        <path d="M16.2 15.8l-3.7-3.7v-.2l3.7-3.7.1.1 4.4 2.5c1.3.7 1.3 1.9 0 2.6l-4.5 2.4z" fill="#FFD500"/>
+        <path d="M16.3 15.7L12.5 12 1.3 23.1c.4.5 1.1.5 1.9.1l13.1-7.5z" fill="#FF3A44"/>
+        <path d="M16.3 8.3L3.2.8C2.4.4 1.7.4 1.3.9L12.5 12l3.8-3.7z" fill="#00E676"/>
+      </svg>
+      <span class="lines"><span class="top">Get it on</span><span class="bottom">Google Play</span></span>
+    </a>
+  </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Clarity Apps LLC &nbsp;·&nbsp;
+    <a href="/privacy/">Privacy</a> &nbsp;·&nbsp;
+    <a href="/terms/">Terms</a> &nbsp;·&nbsp;
+    <a href="/support/">Support</a>
+  </footer>
+</body>
+</html>

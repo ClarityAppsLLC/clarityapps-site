@@ -10,9 +10,9 @@
   <div class="wrap">
 
     <header>
-      <div class="cross">✝</div>
+      <div class="cross">✝︎</div>
       <h1>Privacy Policy</h1>
-      <p>Divinity: The Bible App &nbsp;·&nbsp; Last updated: September 29, 2026</p>
+      <p>Divinity: The Bible App &nbsp;·&nbsp; Last updated: October 15, 2026</p>
     </header>
 
     <div class="highlight">
@@ -27,17 +27,18 @@
     <ul>
       <li><strong>Account information</strong> — if you create an account with your email, Apple or Google, Firebase Authentication (Google) stores your email address and your name. If you continue without signing in, Firebase gives the app an anonymous guest account instead, with no email address attached.</li>
       <li><strong>Profile data</strong> — your display name, the avatar icon you choose, and, if you add them, your favorite verse and the achievements you have earned. Your profile is stored in Firestore, and other Divinity users can see it, for example on the Prayer Wall and in Friends. If you use a photo from your library as your avatar, it stays on your device and is never uploaded.</li>
-      <li><strong>Onboarding answers</strong> — during onboarding we ask your name, which Bible translation you want, when you would like your daily verse, where you would like to start reading, and what you would like the app to help with. Your name becomes your display name and is used in Scripture Chat (below). Your other answers are stored only on your device.</li>
+      <li><strong>Onboarding answers</strong> — during onboarding we ask your name, which Bible translation you want, when you would like your daily verse, where you would like to start reading, and what you would like the app to help with. Your name becomes your display name and is used in Scripture Chat (below). Your other answers are stored only on your device, though a personalized reading plan request uses some of them (below).</li>
       <li><strong>Reading data</strong> — if you have an account, your highlights, notes, bookmarks, chapters read, achievements, reading streak, saint card collection and reading plans are backed up to Firestore under your account, so they come back when you sign in on another device. If you use the app as a guest, they are stored only on your device.</li>
       <li><strong>Community content</strong> — prayer requests you post are stored in Firestore with your display name, avatar icon and account ID, and other users can see them. When you write a request, its text and your first name are sent through our server to Anthropic to write a short prayer, which is posted with it. A request is shown on the Prayer Wall for up to two days. After that it is no longer shown, but it stays stored until you delete your account. You can delete a request yourself while it is showing. We also store which accounts prayed for each request.</li>
       <li><strong>Friends and messages</strong> — if you use Friends, we store your friend code, your friends list, your friend requests and the direct messages you exchange, in Firestore. A conversation can be read only by the two people in it.</li>
       <li><strong>Reports</strong> — if you report a prayer request or another user, we store the report (what was reported, the reason, and the account IDs involved) so we can review it.</li>
       <li><strong>Scripture Chat</strong> — messages you send in Scripture Chat pass through our server (Google Cloud Functions) to Anthropic's API, which writes the reply. Each request also includes your first name and your chosen translation, so the reply can address you and quote the right Bible. Your chats are saved on your device, and if you have an account, your 10 most recent chats are also saved to your account so they sync between devices. Anthropic may retain messages for up to 30 days for trust and safety purposes, per its privacy policy.</li>
+      <li><strong>Personalized reading plans</strong> — when you ask for a personalized plan, your answers to its questions (including what is weighing on you and anything you write in your own words), the books you have read in the app (and, for a follow-up plan, the chapters of the plan you just finished), the time of day you usually read, your translation and the testament you chose to start in are sent through our server to Anthropic to write the plan. Your name is not sent. The plan and your answers are saved on your device and, if you have an account, backed up to it.</li>
       <li><strong>Notifications</strong> — if you allow notifications, your device's push token is stored in Firestore so we can tell you when people pray for your request. Those notifications are delivered through Expo's push service and Apple or Google. Reminders such as your daily verse are scheduled on your device and do not use our servers.</li>
-      <li><strong>App usage</strong> — we use Google Analytics for Firebase to understand how the app is used: for example, how far people get through onboarding, which sign-in option they choose, whether they allow notifications, when the subscription screen is shown and whether a purchase completes, and when the app runs into an error. Google Analytics also records your device model, operating system, app version and approximate location (such as your country), which Google works out from your connection. It does not receive your onboarding answers, messages, prayers or notes, it does not use your device's advertising ID, and we do not link it to your name or email.</li>
+      <li><strong>App usage</strong> — we use Google Analytics for Firebase to understand how the app is used: for example, how far people get through onboarding, which sign-in option they choose, whether they allow notifications, when the subscription screen is shown and whether a purchase completes, and when the app runs into an error. Google Analytics also records your device model, operating system, app version and approximate location (such as your country), which Google works out from your connection. It does not receive your onboarding answers, messages, prayers or notes, it does not use your device's advertising ID, and we do not link it to your name or email. From version 1.1.0, the app does not send this data when your device's region is set to a country in the European Economic Area, the United Kingdom, the Channel Islands, the Isle of Man, Gibraltar or Switzerland, or when the app cannot read your device's region.</li>
       <li><strong>Device identifier</strong> — the app creates a random ID on your device. It is used for a few features before you have an account and as a fallback when checking your subscription. It is not linked to your identity.</li>
       <li><strong>Purchase information</strong> — if you subscribe, payment is handled by Apple's App Store or Google Play. We use RevenueCat to manage and verify subscription status. RevenueCat receives your account ID (a random ID, not your name or email), a device identifier, your app version and platform, and your purchase history (product ID and transaction timestamps). We never see or store your payment card details.</li>
-      <li><strong>Crash and diagnostic data</strong> — crash reports and diagnostic information are collected by Firebase Crashlytics (Google) to help us identify and fix technical issues. This data includes device type, OS version, app version, and a stack trace of the crash. It does not include your personal content or message history.</li>
+      <li><strong>Crash and diagnostic data</strong> — crash reports and diagnostic information are collected by Firebase Crashlytics (Google) to help us identify and fix technical issues. This data includes device type, OS version, app version, and a stack trace of the crash. It does not include your personal content or message history. From version 1.1.0, crash reporting is also off in those cases, and any crash report kept on the device is deleted without being sent.</li>
       <li><strong>Feedback</strong> — if you send feedback or report a bug from inside the app, we store your message, the email address you give us (if any), your account ID, your platform and your app version.</li>
       <li><strong>Usage preferences</strong> — settings such as text size, Bible translation and reminder times are stored only on your device.</li>
     </ul>
@@ -56,7 +57,7 @@
       <li>To back up your reading data and restore it on your other devices.</li>
       <li>To display your name, avatar and profile in community features you choose to use.</li>
       <li>To run the Prayer Wall, Friends and direct messages, and to review reports.</li>
-      <li>To provide Scripture Chat responses, and the prayers written for prayer requests, through Anthropic's API.</li>
+      <li>To provide Scripture Chat responses, personalized reading plans and the prayers written for prayer requests, through Anthropic's API.</li>
       <li>To send the notifications you have allowed.</li>
       <li>To verify your subscription and unlock premium features.</li>
       <li>To respond to support requests and feedback you send us.</li>
@@ -89,6 +90,10 @@
         <td>Consent (Art. 6(1)(a)) — you initiate each chat session</td>
       </tr>
       <tr>
+        <td>Personalized reading plan answers</td>
+        <td>Consent (Art. 6(1)(a)) — you choose to ask for a plan</td>
+      </tr>
+      <tr>
         <td>Community content (prayer requests)</td>
         <td>Consent (Art. 6(1)(a)) — you voluntarily choose to post</td>
       </tr>
@@ -114,11 +119,11 @@
       </tr>
       <tr>
         <td>App usage data (Google Analytics)</td>
-        <td>Legitimate interests (Art. 6(1)(f)) — understanding and improving the app</td>
+        <td>Not collected from version 1.1.0 when your device's region is in the EEA, the UK or Switzerland. Earlier versions: legitimate interests (Art. 6(1)(f)) — understanding and improving the app</td>
       </tr>
       <tr>
         <td>Crash and diagnostic data</td>
-        <td>Legitimate interests (Art. 6(1)(f)) — diagnosing crashes to maintain a stable, secure app</td>
+        <td>Not collected from version 1.1.0 when your device's region is in the EEA, the UK or Switzerland. Earlier versions: legitimate interests (Art. 6(1)(f)) — diagnosing crashes to maintain a stable, secure app</td>
       </tr>
       <tr>
         <td>Device identifier</td>
@@ -136,7 +141,7 @@
       <li><strong>RevenueCat</strong> — subscription management. Receives your account ID, a device identifier, your app platform and version, and purchase history (product ID, transaction timestamps) to verify subscription status. <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
       <li><strong>Expo (650 Industries)</strong> — delivers push notifications about your prayer requests. Receives your device's push token and the text of the notification. <a href="https://expo.dev/privacy" target="_blank">Expo Privacy Policy</a></li>
       <li><strong>Apple App Store / Google Play</strong> — payment processing for subscriptions. We do not receive your payment card details.</li>
-      <li><strong>Anthropic Claude API</strong> — powers Scripture Chat and the prayers written for prayer requests. Your messages, your first name and your chosen translation are sent over TLS-encrypted connections, through our server, to Anthropic's API to generate responses. Anthropic does not use API-submitted data to train its models. Chat data may be retained by Anthropic for up to 30 days for trust and safety review. <a href="https://www.anthropic.com/privacy" target="_blank">Anthropic Privacy Policy</a></li>
+      <li><strong>Anthropic Claude API</strong> — powers Scripture Chat, personalized reading plans and the prayers written for prayer requests. What Section 8 describes is sent over TLS-encrypted connections, through our server, to Anthropic's API to generate responses. Anthropic does not use API-submitted data to train its models. Chat data may be retained by Anthropic for up to 30 days for trust and safety review. <a href="https://www.anthropic.com/privacy" target="_blank">Anthropic Privacy Policy</a></li>
     </ul>
 
     <h2>7. International Data Transfers</h2>
@@ -151,7 +156,7 @@
     <p>You may request a copy of the applicable transfer safeguards by contacting us at <a href="mailto:support@clarityapps.info">support@clarityapps.info</a>.</p>
 
     <h2>8. Automated Processing</h2>
-    <p>Scripture Chat, and the prayer written when you post a prayer request, use Anthropic's Claude AI model. A request includes the messages in that chat (or the text of your prayer request), your first name and, in chat, your chosen translation. Your other onboarding answers are never sent. This processing does not produce legal or similarly significant effects about you.</p>
+    <p>Scripture Chat, personalized reading plans and the prayer written when you post a prayer request use Anthropic's Claude AI model. A chat request includes the messages in that chat, your first name and your chosen translation. A prayer request includes its text and your first name. A plan request includes what Section 2 describes under Personalized reading plans, without your name. Your other onboarding answers are never sent. This processing does not produce legal or similarly significant effects about you.</p>
 
     <h2>9. Data Retention</h2>
     <p>Your account data, including the reading data backed up to it, is kept for as long as your account exists. You can delete your account at any time from within the app (Profile → Settings → Delete Account). That removes your Firebase Authentication record, your profile and backed-up data, your prayer requests, your friends, friend requests and direct messages, and your push tokens.</p>
@@ -197,7 +202,7 @@
       <li><strong>Commercial information</strong> — subscription status, purchase history (product ID, transaction timestamps, via RevenueCat).</li>
       <li><strong>Internet or other electronic network activity information</strong> — app usage events (via Google Analytics), and crash logs and diagnostic data (via Firebase Crashlytics).</li>
       <li><strong>Approximate location</strong> — country or region, worked out by Google Analytics from your connection.</li>
-      <li><strong>User-generated content</strong> — prayer requests, direct messages, Scripture Chat messages, notes and highlights backed up to your account, feedback, and reports.</li>
+      <li><strong>User-generated content</strong> — prayer requests, direct messages, Scripture Chat messages, personalized plan answers, notes and highlights backed up to your account, feedback, and reports.</li>
     </ul>
 
     <p>To exercise your California rights, email <a href="mailto:support@clarityapps.info">support@clarityapps.info</a>. We will respond within 45 days. We will not require you to create an account to submit a request.</p>
@@ -208,7 +213,7 @@
       <li><strong>Encryption in transit</strong> — all data transmitted between the app and our servers (Firebase, Anthropic, RevenueCat) uses TLS 1.2 or higher. No personal data is transmitted over unencrypted connections.</li>
       <li><strong>Encryption at rest</strong> — data stored in Firestore is encrypted at rest by Google using AES-256 by default.</li>
       <li><strong>Access controls</strong> — Firestore security rules limit each user to their own data, apart from shared actions such as praying for a request, and let users read only what is meant to be shared: prayer requests, other users' profiles, and the messages in their own conversations. No employee of Clarity Apps LLC has routine access to user personal data.</li>
-      <li><strong>Faith data minimization</strong> — your onboarding answers, other than your name, stay on your device. Anthropic receives only what Section 8 describes, and nothing is used for advertising.</li>
+      <li><strong>Faith data minimization</strong> — your onboarding answers stay on your device, except your name and the few a personalized plan request uses (Section 2). Anthropic receives only what Section 8 describes, and nothing is used for advertising.</li>
     </ul>
     <p>No method of transmission over the internet or electronic storage is 100% secure. In the event of a data breach that is likely to result in a risk to your rights and freedoms, we will notify you and relevant regulatory authorities within 72 hours of becoming aware of the breach, as required by applicable law.</p>
 
